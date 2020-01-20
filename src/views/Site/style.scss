@@ -1,0 +1,17 @@
+
+.comment {
+  .comment__info {
+    color: #888;
+    display: flex;
+    justify-content: space-between
+  }
+  .comment__timestamp {
+    font-size: .8em;
+    font-style: italic;
+  }
+  .comment__added_by {
+    font-weight: bold;
+  }
+
+  margin-bottom: 1.5em;
+}
