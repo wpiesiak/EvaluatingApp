@@ -1,17 +1,16 @@
-import React from "react";
+import React from 'react'
 
-const withToggle = (PassedComponent) => {
+const withToggle = PassedComponent => {
     return class WithToggle extends React.Component {
+        static propTypes = {}
+
         state = {
-            toggleStatus: false
+            toggleStatus: false,
         }
-        constructor() {
-            super();
-            this.toggle = this.toggle.bind(this)
-        }
+
         toggle() {
             this.setState({
-                toggleStatus: !this.state.toggleStatus
+                toggleStatus: !this.state.toggleStatus,
             })
         }
 
@@ -19,7 +18,7 @@ const withToggle = (PassedComponent) => {
             return (
                 <PassedComponent
                     {...this.props}
-                    toggle={this.toggle}
+                    toggle={this.toggle.bind(this)}
                     toggleStatus={this.state.toggleStatus}
                 />
             )
@@ -28,4 +27,3 @@ const withToggle = (PassedComponent) => {
 }
 
 export default withToggle
-

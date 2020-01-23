@@ -1,15 +1,12 @@
-import {updateUser, UPDATE_USER} from './user.actions';
-import {addComment, ADD_COMMENT} from './comment.actions';
-
+import { updateUser, UPDATE_USER } from './user.actions'
+import { addComment, ADD_COMMENT } from './comment.actions'
 
 export const actions = {
     updateUser,
-    addComment
-};
+    addComment,
+}
 
 export const types = {
     UPDATE_USER,
-    ADD_COMMENT
-};
-
-
+    ADD_COMMENT,
+}

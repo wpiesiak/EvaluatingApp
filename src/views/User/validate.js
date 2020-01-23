@@ -1,24 +1,25 @@
-
 export const validate = values => {
     const errors = {
-        address: {}
-    };
+        address: {},
+    }
 
     if (!values.firstName) {
         errors.firstName = 'First name is required'
-    } else if (values.firstName.length < 2){
+    } else if (values.firstName.length < 2) {
         errors.firstName = 'Name should be minimum 2 characters long'
     }
 
     if (!values.lastName) {
         errors.lastName = 'Last name is required'
-    } else if (values.lastName.length < 2){
+    } else if (values.lastName.length < 2) {
         errors.firstName = 'Name should be minimum 2 characters long'
     }
 
     if (!values.email) {
         errors.email = 'Email is required'
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    } else if (
+        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
         errors.email = 'Invalid email address'
     }
 
@@ -28,7 +29,6 @@ export const validate = values => {
         errors.age = 'Age should contain only numbers'
     }
 
-
     if (values.address && !values.address.street) {
         errors.address.street = 'Street address is required'
     }
@@ -37,5 +37,5 @@ export const validate = values => {
         errors.address.city = 'City is required'
     }
 
-    return errors;
+    return errors
 }

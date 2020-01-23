@@ -1,4 +1,4 @@
-import {actions, types } from '../actions';
+import { actions, types } from '../actions'
 
 describe('actions', () => {
     it('should create new comment', () => {
@@ -6,14 +6,14 @@ describe('actions', () => {
             id: 4,
             added_by: 'Test User',
             timestamp: '2020-01-20',
-            content: 'Test comment'
-        };
+            content: 'Test comment',
+        }
         const expectedAction = {
             type: types.ADD_COMMENT,
-            comment
+            comment,
         }
-        expect(actions.addComment(comment)).toEqual(expectedAction);
-    });
+        expect(actions.addComment(comment)).toEqual(expectedAction)
+    })
 
     it('should update existing user', () => {
         const user = {
@@ -26,14 +26,13 @@ describe('actions', () => {
                 city: 'Sydney',
                 state: 'New South Wales',
                 zipcode: '2000',
-                country: 'Australia'
-            }
-        };
+                country: 'Australia',
+            },
+        }
         const expectedAction = {
             type: types.UPDATE_USER,
-            user
-        };
-        expect(actions.updateUser(user)).toEqual(expectedAction);
+            user,
+        }
+        expect(actions.updateUser(user)).toEqual(expectedAction)
     })
-});
-
+})

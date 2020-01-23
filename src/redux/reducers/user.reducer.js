@@ -1,4 +1,4 @@
-import {UPDATE_USER} from '../actions/user.actions';
+import { UPDATE_USER } from '../actions/user.actions'
 
 const initialState = {
     user: {
@@ -11,18 +11,18 @@ const initialState = {
             city: 'Los Angeles',
             state: 'California',
             zipcode: '90210',
-            country: 'USA'
-        }
-    }
-};
+            country: 'USA',
+        },
+    },
+}
 
 export function userReducer(state = initialState, action) {
     switch (action.type) {
         case UPDATE_USER:
             return Object.assign({}, state, {
-                user: action.user
-            });
+                user: action.user,
+            })
         default:
-            return state;
+            return state
     }
 }
