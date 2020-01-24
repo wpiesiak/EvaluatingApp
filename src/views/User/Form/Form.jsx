@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { reduxForm } from 'redux-form'
-import GeneralSection from './General.jsx'
+import GeneralSection from './General'
 import AddressSection from './Address'
-import HobbySection from './Hobby.jsx'
+import HobbySection from './Hobby'
 import { validate } from '../validate'
 
 class UserForm extends React.Component {
@@ -15,14 +15,13 @@ class UserForm extends React.Component {
                 <HobbySection />
                 <div className="mt-3 text-center">
                     <button
+                        type="button"
                         className="btn btn-danger mr-3"
                         onClick={this.props.toggleEdit}
                     >
                         Cancel
                     </button>
-                    <button type="submit" className="btn btn-primary">
-                        Accept
-                    </button>
+                    <button className="btn btn-primary">Accept</button>
                 </div>
             </form>
         )

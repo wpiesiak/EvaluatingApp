@@ -3,49 +3,47 @@ import { Field, FormSection } from 'redux-form'
 import { Input } from '../../../components/Input'
 
 const UserFormGeneral = () => {
+    const defaultInputProps = {
+        component: Input,
+        type: 'text',
+        className: 'form-control',
+    }
     return (
         <FormSection>
             <div className="form-group">
                 <Field
+                    {...defaultInputProps}
                     label="First Name"
                     name="firstName"
-                    component={Input}
-                    type="text"
                     placeholder="First Name"
-                    className="form-control"
                 />
             </div>
 
             <div className="form-group">
                 <Field
+                    {...defaultInputProps}
                     label="Last Name"
                     name="lastName"
-                    component={Input}
-                    type="text"
                     placeholder="Last Name"
-                    className="form-control"
                 />
             </div>
 
             <div className="form-group ">
                 <Field
+                    {...defaultInputProps}
                     label="Email"
                     name="email"
-                    component={Input}
                     type="email"
                     placeholder="username@mail.com"
-                    className="form-control"
                 />
             </div>
 
             <div className="form-group">
                 <Field
+                    {...defaultInputProps}
                     label="Age"
                     name="age"
-                    component={Input}
-                    type="text"
                     placeholder="25"
-                    className="form-control"
                 />
             </div>
         </FormSection>

@@ -1,10 +1,12 @@
 
 .user-form {
   text-align: left;
+
   .form-group {
     margin-bottom: 0;
   }
-  label {
+
+  .form__label {
     font-size: 11px;
     color: #282c34;
   }
@@ -13,7 +15,8 @@
 .hobbies-list {
   list-style-type: none;
   padding-inline-start: 0;
-  li {
+
+  .hobbies-list__element {
     display: inline-block;
     margin-right: 2em;
   }

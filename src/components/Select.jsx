@@ -10,7 +10,9 @@ export const Select = ({
     meta: { touched, error, warning },
 }) => (
     <div>
-        <label htmlFor={name}>{label}</label>
+        <label htmlFor={name} className="form__label">
+            {label}
+        </label>
         <div>
             <select
                 {...input}

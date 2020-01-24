@@ -64,10 +64,9 @@ class UserData extends React.Component {
                             </th>
                         </tr>
                         <tr>
-                            {user.hobby &&
-                                user.hobby.map(hobby => {
-                                    return <td key={hobby}>{hobby}</td>
-                                })}
+                            {user.hobby.map((hobby, index) => (
+                                <td key={index}>{hobby}</td>
+                            ))}
                         </tr>
                     </tbody>
                 </table>
