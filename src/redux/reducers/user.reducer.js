@@ -13,6 +13,7 @@ const initialState = {
             zipcode: '90210',
             country: 'USA',
         },
+        hobby: [' ', ' ', ' '],
     },
 }
 

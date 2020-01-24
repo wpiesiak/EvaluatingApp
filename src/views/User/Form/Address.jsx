@@ -1,58 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { reduxForm, Field, FormSection } from 'redux-form'
-import { Input } from '../../components/Input'
-import { Select } from '../../components/Select'
-import { validate } from './validate'
+import { Field, FormSection } from 'redux-form'
+import { Input } from '../../../components/Input.jsx'
+import { Select } from '../../../components/Select.jsx'
 
-class UserForm extends React.Component {
-    render() {
-        return (
-            <form onSubmit={this.props.handleSubmit} className="user-form">
-                <div className="form-group">
-                    <Field
-                        label="First Name"
-                        name="firstName"
-                        component={Input}
-                        type="text"
-                        placeholder="First Name"
-                        className="form-control"
-                    />
-                </div>
+const UserFormAddress = () => {
 
-                <div className="form-group">
-                    <Field
-                        label="Last Name"
-                        name="lastName"
-                        component={Input}
-                        type="text"
-                        placeholder="Last Name"
-                        className="form-control"
-                    />
-                </div>
-
-                <div className="form-group ">
-                    <Field
-                        label="Email"
-                        name="email"
-                        component={Input}
-                        type="email"
-                        placeholder="username@mail.com"
-                        className="form-control"
-                    />
-                </div>
-
-                <div className="form-group">
-                    <Field
-                        label="Age"
-                        name="age"
-                        component={Input}
-                        type="text"
-                        placeholder="25"
-                        className="form-control"
-                    />
-                </div>
-
+return (
                 <FormSection name="address">
                     <h3>Address</h3>
                     <div className="form-group">
@@ -113,30 +66,7 @@ class UserForm extends React.Component {
                         </div>
                     </div>
                 </FormSection>
-
-                <div className="mt-3 text-center">
-                    <button
-                        className="btn btn-danger mr-3"
-                        onClick={this.props.toggleEdit}
-                    >
-                        Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary">
-                        Accept
-                    </button>
-                </div>
-            </form>
-        )
-    }
+)
 }
 
-UserForm.propTypes = {
-    handleSubmit: PropTypes.func,
-}
-
-export default reduxForm({
-    form: 'user',
-    // fields,
-    validate,
-    // initialValues: this.props.initialValues
-})(UserForm)
+export default UserFormAddress

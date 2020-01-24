@@ -9,3 +9,12 @@
     color: #282c34;
   }
 }
+
+.hobbies-list {
+  list-style-type: none;
+  padding-inline-start: 0;
+  li {
+    display: inline-block;
+    margin-right: 2em;
+  }
+}

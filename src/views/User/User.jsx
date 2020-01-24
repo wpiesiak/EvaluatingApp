@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { actions } from '../../redux/actions'
 import withToggle from '../../components/withToggle'
-import UserForm from './Form'
+import UserForm from './Form/Form'
 import UserData from './Data'
 import './style.scss'
 

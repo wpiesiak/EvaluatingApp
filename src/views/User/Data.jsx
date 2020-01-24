@@ -58,6 +58,17 @@ class UserData extends React.Component {
                             <th>Country</th>
                             <td>{user.address.country}</td>
                         </tr>
+                        <tr>
+                            <th colSpan={4}>
+                                <h3>Hobbies</h3>
+                            </th>
+                        </tr>
+                        <tr>
+                            {user.hobby &&
+                                user.hobby.map(hobby => {
+                                    return <td key={hobby}>{hobby}</td>
+                                })}
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -67,7 +78,7 @@ class UserData extends React.Component {
 
 UserData.propTypes = {
     user: PropTypes.object,
-    toggleEdit: PropTypes.func
+    toggleEdit: PropTypes.func,
 }
 
 export default UserData
