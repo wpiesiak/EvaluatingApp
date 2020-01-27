@@ -19,9 +19,9 @@ describe('Main app ', () => {
     test('App navigating', () => {
         const { getByText } = render(<App />)
 
-        fireEvent.click(getByText('User data'))
-        const textElement = getByText(/General info/i)
-        expect(textElement).toBeInTheDocument()
+        fireEvent.click(getByText('LoggedUser data'));
+        const textElement = getByText(/General info/i);
+        expect(textElement).toBeInTheDocument();
     })
 
     test('landing on a bad page shows 404 page', () => {

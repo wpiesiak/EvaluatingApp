@@ -7,7 +7,7 @@ import UserForm from './Form/Form'
 import UserData from './Data'
 import './style.scss'
 
-class User extends React.Component {
+class LoggedUser extends React.Component {
     constructor(props) {
         super(props)
         this.formSubmit = this.formSubmit.bind(this)
@@ -43,11 +43,11 @@ function mapStateToProps(state) {
     }
 }
 
-User.propTypes = {
+LoggedUser.propTypes = {
     user: PropTypes.object,
     dispatch: PropTypes.func,
     toggle: PropTypes.func,
     toggleStatus: PropTypes.bool,
 }
 
-export default connect(mapStateToProps)(withToggle(User))
+export default connect(mapStateToProps)(withToggle(LoggedUser))

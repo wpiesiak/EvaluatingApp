@@ -4,7 +4,7 @@ describe('actions', () => {
     it('should create new comment', () => {
         const comment = {
             id: 4,
-            added_by: 'Test User',
+            added_by: 'Test LoggedUser',
             timestamp: '2020-01-20',
             content: 'Test comment',
         }
