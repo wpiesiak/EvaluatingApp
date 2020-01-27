@@ -11,7 +11,9 @@ export const Input = ({
     meta: { touched, error, warning },
 }) => (
     <div>
-        <label id={input.name}>{label}</label>
+        <label id={input.name} className="form__label">
+            {label}
+        </label>
         <div>
             <input
                 {...input}
@@ -41,4 +43,3 @@ Input.propTypes = {
         warning: PropTypes.bool,
     },
 }
-
