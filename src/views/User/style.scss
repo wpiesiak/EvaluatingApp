@@ -16,7 +16,7 @@
   list-style-type: none;
   padding-inline-start: 0;
 
-  .hobbies-list__element {
+   &__element {
     display: inline-block;
     margin-right: 2em;
   }
