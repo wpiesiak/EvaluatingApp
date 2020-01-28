@@ -1,4 +1,4 @@
-import { UPDATE_USER } from '../actions/user.actions'
+import { UPDATE_USER } from '../../actions/users/loggedUser.actions'
 
 const initialState = {
     user: {
@@ -17,7 +17,7 @@ const initialState = {
     },
 }
 
-export function userReducer(state = initialState, action) {
+export function loggedUserReducer(state = initialState, action) {
     switch (action.type) {
         case UPDATE_USER:
             return Object.assign({}, state, {
