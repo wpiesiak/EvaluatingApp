@@ -1,18 +1,23 @@
-import { updateUser, UPDATE_USER } from './users/loggedUser.actions'
-import { getUser, GET_USER } from './users/user.actions.js'
-import { getUsers, GET_USERS } from './users/users.actions.js'
+import {
+    getDetailedUser,
+    getUsers,
+    updateUser,
+    GET_DETAILED_USER,
+    GET_USERS,
+    UPDATE_USER,
+} from './users.actions.js'
 import { addComment, ADD_COMMENT } from './comment.actions'
 
 export const actions = {
-    updateUser,
     addComment,
-    getUser,
+    getDetailedUser,
     getUsers,
+    updateUser,
 }
 
 export const types = {
-    UPDATE_USER,
     ADD_COMMENT,
-    GET_USER,
+    GET_DETAILED_USER,
     GET_USERS,
+    UPDATE_USER,
 }

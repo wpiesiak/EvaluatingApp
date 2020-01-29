@@ -9,7 +9,7 @@ const UserFormGeneral = () => {
         className: 'form-control',
     }
     return (
-        <React.Fragment>
+        <>
             <div className="form-group">
                 <Field
                     {...defaultInputProps}
@@ -46,7 +46,7 @@ const UserFormGeneral = () => {
                     placeholder="25"
                 />
             </div>
-        </React.Fragment>
+        </>
     )
 }
 

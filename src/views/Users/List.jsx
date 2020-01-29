@@ -2,16 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { actions } from '../../redux/actions'
+import { selectUsersList } from '../../redux/reducers/users.reducer'
 
 class UsersList extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            users: [],
-        }
+    state = {
+        users: [],
     }
     componentDidMount() {
-        this.props.dispatch(actions.getUsers())
+        this.props.getUsers()
     }
     renderUser(user) {
         return (
@@ -40,17 +38,19 @@ class UsersList extends React.Component {
 }
 UsersList.propTypes = {
     users: PropTypes.array,
-    dispatch: PropTypes.func,
+    getUsers: PropTypes.func,
 }
 
 UsersList.defaltValues = {
     users: [],
 }
 
-function mapStateToProps(state) {
-    return {
-        users: state.usersReducer.users,
-    }
-}
+const mapStateToProps = state => ({
+    users: selectUsersList(state),
+})
 
-export default connect(mapStateToProps)(UsersList)
+const mapDispatchToProps = dispatch => ({
+    getUsers: () => actions.getUsers()(dispatch),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersList)

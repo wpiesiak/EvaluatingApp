@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { actions } from '../../redux/actions'
+import { selectDetailedUser } from '../../redux/reducers/users.reducer'
 import { Link, useParams } from 'react-router-dom'
 
 const SingleUser = props => {
     const { id } = useParams()
-    const { dispatch, user } = props
+    const { user, getUser } = props
     useEffect(() => {
-        dispatch(actions.getUser(id))
+        getUser(id)
     })
     return (
         <div className="single-user">
@@ -36,13 +37,15 @@ const SingleUser = props => {
 
 SingleUser.propTypes = {
     user: PropTypes.object,
-    dispatch: PropTypes.func,
+    getUser: PropTypes.func,
 }
 
-const mapStateToProps = state => {
-    return {
-        user: state.userReducer.user,
-    }
-}
+const mapStateToProps = state => ({
+    user: selectDetailedUser(state),
+})
 
-export default connect(mapStateToProps)(SingleUser)
+const mapDispatchToProps = dispatch => ({
+    getUser: userId => actions.getDetailedUser(userId)(dispatch),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleUser)

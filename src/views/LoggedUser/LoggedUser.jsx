@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { actions } from '../../redux/actions'
+import { selectLoggedUser } from '../../redux/reducers/users.reducer'
 import withToggle from '../../components/withToggle'
 import UserForm from './Form/Form'
 import UserData from './Data'
@@ -13,7 +14,7 @@ class LoggedUser extends React.Component {
         this.formSubmit = this.formSubmit.bind(this)
     }
     formSubmit(data) {
-        this.props.dispatch(actions.updateUser(data))
+        this.props.updateUser(data)
         this.props.toggle()
     }
     render() {
@@ -37,17 +38,22 @@ class LoggedUser extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        user: state.loggedUserReducer.user,
-    }
-}
+const mapStateToProps = state => ({
+    user: selectLoggedUser(state),
+})
+
+const mapDispatchToProps = dispatch => ({
+    updateUser: user => actions.updateUser(user)(dispatch),
+})
 
 LoggedUser.propTypes = {
     user: PropTypes.object,
-    dispatch: PropTypes.func,
+    updateUser: PropTypes.func,
     toggle: PropTypes.func,
     toggleStatus: PropTypes.bool,
 }
 
-export default connect(mapStateToProps)(withToggle(LoggedUser))
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withToggle(LoggedUser))

@@ -21,10 +21,10 @@ const HobbyFields = ({ fields }) => {
 }
 
 const UserFormHobby = () => (
-    <React.Fragment>
+    <>
         <h3>Hobbies</h3>
         <FieldArray name="hobby" component={HobbyFields} />
-    </React.Fragment>
+    </>
 )
 
 HobbyFields.propTypes = {
