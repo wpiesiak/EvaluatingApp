@@ -7,10 +7,6 @@
 
 # testing
 /coverage
-/src/__snapshots__
-/src/views/Home/__snapshots__
-/src/views/Site/__snapshots__
-/src/views/LoggedUser/__snapshots__
 
 # production
 /build

@@ -3,12 +3,12 @@ import { render } from '@testing-library/react'
 import Home from './Home'
 
 test('renders home component', () => {
-    const { getByText } = render(<Home />)
-    const textElement = getByText(/home page/i)
-    expect(textElement).toBeInTheDocument()
+  const { getByText } = render(<Home />)
+  const textElement = getByText(/home page/i)
+  expect(textElement).toBeInTheDocument()
 })
 
 test('snapshot', () => {
-    const comp = render(<Home />)
-    expect(comp).toMatchSnapshot()
+  const {container} = render(<Home />)
+  expect(container).toMatchSnapshot()
 })

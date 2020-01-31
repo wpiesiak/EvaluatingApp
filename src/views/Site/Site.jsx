@@ -3,12 +3,12 @@ import Comments from './Comments'
 import React from 'react'
 
 class Site extends React.Component {
-    render() {
-        return (
-            <div className="site-page">
-                <div className={'content'}>
-                    <h1>Article title</h1>
-                    <p>
+  render() {
+    return (
+      <div className="site-page">
+        <div className={'content'}>
+          <h1>Article title</h1>
+          <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Phasellus efficitur eleifend est. Quisque elementum
                         sagittis nibh, faucibus tempor purus. Vestibulum congue
@@ -21,8 +21,8 @@ class Site extends React.Component {
                         viverra leo in massa euismod, aliquam dictum ligula
                         tincidunt. Suspendisse at iaculis tellus, vitae maximus
                         tortor.
-                    </p>
-                    <p>
+          </p>
+          <p>
                         Vestibulum eu tellus mauris. Nullam blandit ipsum at
                         ligula ultrices rhoncus. Donec placerat sem vehicula
                         quam tempus rutrum. Fusce sem nulla, malesuada vitae
@@ -36,8 +36,8 @@ class Site extends React.Component {
                         at. Fusce rhoncus, sem id ullamcorper pharetra, nibh
                         tellus ultrices justo, quis hendrerit sem magna at
                         magna.
-                    </p>
-                    <p>
+          </p>
+          <p>
                         Integer ultrices quis leo vel tristique. In ornare
                         tortor ipsum, a tristique turpis euismod at. Aliquam
                         augue erat, consectetur laoreet lorem ut, blandit
@@ -50,12 +50,12 @@ class Site extends React.Component {
                         orci luctus et ultrices posuere cubilia Curae; Fusce
                         neque eros, fringilla tempus sem sed, eleifend dapibus
                         lorem.
-                    </p>
-                </div>
-                <Comments />
-            </div>
-        )
-    }
+          </p>
+        </div>
+        <Comments test={1} />
+      </div>
+    )
+  }
 }
 
 export default Site
