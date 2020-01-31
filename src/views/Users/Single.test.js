@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import { Router, Route } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { Provider } from 'react-redux'
@@ -76,13 +76,5 @@ describe('Single User Page', () => {
             path: '/user/:id',
         })
         expect(getByText('No user found with given id')).toBeInTheDocument()
-    })
-    test('back to list link', () => {
-        const { getByText } = renderWithRouterMatch(SingleUser, {
-            route: `/user/${1}`,
-            path: '/user/:id',
-        })
-        const link = getByText('Back to list')
-        expect(link.closest('a')).toHaveAttribute('href', '/users')
     })
 })

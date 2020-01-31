@@ -1,7 +1,8 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Router, Switch, Route, Link } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
+import history from './history'
 import Site from './views/Site/Site'
 import LoggedUser from './views/LoggedUser/LoggedUser'
 import UsersList from './views/Users/List'
@@ -20,7 +21,7 @@ function App() {
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>Evaluation App!</p>
                 </header>
-                <Router>
+                <Router history={history}>
                     <nav>
                         <ul>
                             <li>

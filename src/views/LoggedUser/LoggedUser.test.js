@@ -39,4 +39,11 @@ describe('UserPage', () => {
         expect(userPage.getByText('Last name is required')).toBeTruthy()
         expect(userPage.getByText('Invalid email address')).toBeTruthy()
     })
+    test('user form submit properly', () => {
+        fireEvent.click(userPage.getByText('Edit'))
+        const nameInput = userPage.getByPlaceholderText('First Name')
+        fireEvent.change(nameInput, { target: { value: 'Test' } })
+        fireEvent.click(userPage.getByText('Accept'))
+        expect(userPage.getByText('Test')).toBeInTheDocument()
+    })
 })

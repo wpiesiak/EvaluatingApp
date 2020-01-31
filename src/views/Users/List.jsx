@@ -5,11 +5,22 @@ import { actions } from '../../redux/actions'
 import { selectUsersList } from '../../redux/reducers/users.reducer'
 
 class UsersList extends React.Component {
-    state = {
-        users: [],
+    constructor(props) {
+        super(props)
+        this.state = {
+            users: [],
+            loading: true,
+        }
+        this.getUsers = this.getUsers.bind(this)
+    }
+    getUsers() {
+        this.props.getUsers()
+        this.setState({
+            loading: false,
+        })
     }
     componentDidMount() {
-        this.props.getUsers()
+        setTimeout(this.getUsers, 500)
     }
     renderUser(user) {
         return (
@@ -25,13 +36,17 @@ class UsersList extends React.Component {
         return (
             <div className="users-list">
                 <h2>List of all users</h2>
-                <div className="users-list__container">
-                    {users && users.length ? (
-                        <ul>{users.map(user => this.renderUser(user))}</ul>
-                    ) : (
-                        <h3>No users found</h3>
-                    )}
-                </div>
+                {this.state.loading ? (
+                    <p>Loading....</p>
+                ) : (
+                    <div className="users-list__container">
+                        {users && users.length ? (
+                            <ul>{users.map(user => this.renderUser(user))}</ul>
+                        ) : (
+                            <h3>No users found</h3>
+                        )}
+                    </div>
+                )}
             </div>
         )
     }
