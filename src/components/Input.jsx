@@ -37,9 +37,4 @@ Input.propTypes = {
     type: PropTypes.string,
     placeholder: PropTypes.string,
     className: PropTypes.string,
-    meta: {
-        touched: PropTypes.bool,
-        error: PropTypes.bool,
-        warning: PropTypes.bool,
-    },
 }

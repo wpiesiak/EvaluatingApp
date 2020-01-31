@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, FormSection } from 'redux-form'
+import { Field } from 'redux-form'
 import { Input } from '../../../components/Input'
 
 const UserFormGeneral = () => {
@@ -9,7 +9,7 @@ const UserFormGeneral = () => {
         className: 'form-control',
     }
     return (
-        <FormSection>
+        <>
             <div className="form-group">
                 <Field
                     {...defaultInputProps}
@@ -46,7 +46,7 @@ const UserFormGeneral = () => {
                     placeholder="25"
                 />
             </div>
-        </FormSection>
+        </>
     )
 }
 

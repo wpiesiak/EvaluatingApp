@@ -24,7 +24,7 @@ const initialState = {
     ],
 }
 
-export function commentsReducer(state = initialState, action) {
+export function comments(state = initialState, action) {
     switch (action.type) {
         case ADD_COMMENT:
             return Object.assign({}, state, {

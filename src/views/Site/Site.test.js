@@ -18,7 +18,6 @@ describe('Site Page', () => {
     test('snapshot', () => {
         const comp = render(
             <Provider store={store}>
-                f
                 <Site />
             </Provider>
         )

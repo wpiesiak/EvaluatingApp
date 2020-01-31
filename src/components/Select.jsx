@@ -35,14 +35,9 @@ export const Select = ({
 )
 
 Select.propTypes = {
-    input: PropTypes.string,
+    input: PropTypes.object,
     name: PropTypes.string,
     label: PropTypes.string,
     className: PropTypes.string,
     options: PropTypes.array,
-    meta: {
-        touched: PropTypes.bool,
-        error: PropTypes.bool,
-        warning: PropTypes.bool,
-    },
 }

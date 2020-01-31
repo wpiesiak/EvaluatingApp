@@ -1,10 +1,11 @@
 import { actions, types } from '../actions'
+import { setUpdatedUser } from '../actions/users.actions'
 
 describe('actions', () => {
     it('should create new comment', () => {
         const comment = {
             id: 4,
-            added_by: 'Test User',
+            added_by: 'Test LoggedUser',
             timestamp: '2020-01-20',
             content: 'Test comment',
         }
@@ -33,6 +34,6 @@ describe('actions', () => {
             type: types.UPDATE_USER,
             user,
         }
-        expect(actions.updateUser(user)).toEqual(expectedAction)
+        expect(setUpdatedUser(user)).toEqual(expectedAction)
     })
 })

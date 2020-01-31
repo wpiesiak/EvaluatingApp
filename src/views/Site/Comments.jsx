@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { actions } from '../../redux/actions'
+import { selectLoggedUser } from '../../redux/reducers/users.reducer'
 import CommentForm from './CommentForm'
 import withToggle from '../../components/withToggle'
 
@@ -12,7 +13,7 @@ class Comments extends React.Component {
     }
 
     formSubmit(comment) {
-        comment.id = this.props.comments.length;
+        comment.id = this.props.comments.length
         comment.added_by =
             this.props.user.firstName + ' ' + this.props.user.lastName
         comment.timestamp = new Date().toISOString().substring(0, 10)
@@ -71,11 +72,9 @@ Comments.defauProps = {
     user: {},
 }
 
-function mapStateToProps(state) {
-    return {
-        comments: state.commentsReducer.comments,
-        user: state.userReducer.user,
-    }
-}
+const mapStateToProps = state => ({
+    comments: state.comments.comments,
+    user: selectLoggedUser(state),
+})
 
 export default connect(mapStateToProps)(withToggle(Comments))

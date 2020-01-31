@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormSection, Field, FieldArray } from 'redux-form'
+import { Field, FieldArray } from 'redux-form'
 import { Input } from '../../../components/Input.jsx'
 
 const HobbyFields = ({ fields }) => {
@@ -21,14 +21,14 @@ const HobbyFields = ({ fields }) => {
 }
 
 const UserFormHobby = () => (
-    <FormSection>
+    <>
         <h3>Hobbies</h3>
         <FieldArray name="hobby" component={HobbyFields} />
-    </FormSection>
+    </>
 )
 
 HobbyFields.propTypes = {
-    fields: PropTypes.array,
+    fields: PropTypes.object,
 }
 
 export default UserFormHobby
