@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { actions } from '../../redux/actions'
 import { selectLoggedUser } from '../../redux/reducers/users.reducer'
 import CommentForm from './CommentForm'
-import withToggle from '../../components/withToggle'
+import withToggle from '../../components/withToggle/withToggle'
 
 class Comments extends React.Component {
     constructor(props) {

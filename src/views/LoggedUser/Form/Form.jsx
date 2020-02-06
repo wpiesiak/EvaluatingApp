@@ -4,7 +4,7 @@ import { reduxForm } from 'redux-form'
 import GeneralSection from './General'
 import AddressSection from './Address'
 import HobbySection from './Hobby'
-import { validate } from '../validate'
+import { validate } from './validate'
 
 class UserForm extends React.Component {
     render() {

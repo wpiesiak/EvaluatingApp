@@ -2,7 +2,7 @@ import React from 'react'
 
 const withToggle = PassedComponent => {
     return class WithToggle extends React.Component {
-        static propTypes = {}
+       // static propTypes = {}
 
         state = {
             toggleStatus: false,
