@@ -1,8 +1,8 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import { createBrowserHistory } from 'history'
-import { Router } from 'react-router-dom'
 import App from './App'
+import React from 'react'
+import history from './history'
+import { Router } from 'react-router-dom'
+import { render, fireEvent } from '@testing-library/react'
 
 describe('Main app ', () => {
     test('renders Evaluation App text', () => {
@@ -25,7 +25,6 @@ describe('Main app ', () => {
     })
 
     test('landing on a bad page shows 404 page', () => {
-        const history = createBrowserHistory()
         history.push('/some/bad/route')
         const { getByText } = render(
             <Router history={history}>

@@ -1,8 +1,8 @@
 import React from 'react'
-import { render } from '@testing-library/react'
-import { Provider } from 'react-redux'
-import store from '../../store'
 import Site from './Site'
+import store from '../../store'
+import { Provider } from 'react-redux'
+import { render } from '@testing-library/react'
 
 describe('Site Page', () => {
     test('renders site component', () => {

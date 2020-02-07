@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
 import { actions } from '../../redux/actions'
+import { connect } from 'react-redux'
 import { selectDetailedUser } from '../../redux/reducers/users.reducer'
-import { Link, useParams } from 'react-router-dom'
+import { useParams, withRouter } from 'react-router-dom'
 
 const SingleUser = props => {
     const { id } = useParams()
@@ -30,7 +30,9 @@ const SingleUser = props => {
                     <h3>No user found with given id</h3>
                 </div>
             )}
-            <Link to="/users">Back to list</Link>
+            <button onClick={() => props.history.push('/users')}>
+                Back to list
+            </button>
         </div>
     )
 }
@@ -38,6 +40,7 @@ const SingleUser = props => {
 SingleUser.propTypes = {
     user: PropTypes.object,
     getUser: PropTypes.func,
+    history: PropTypes.object,
 }
 
 const mapStateToProps = state => ({
@@ -48,4 +51,7 @@ const mapDispatchToProps = dispatch => ({
     getUser: userId => actions.getDetailedUser(userId)(dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingleUser)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouter(SingleUser))

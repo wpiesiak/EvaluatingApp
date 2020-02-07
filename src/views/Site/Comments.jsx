@@ -1,10 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { actions } from '../../redux/actions'
-import { selectLoggedUser } from '../../redux/reducers/users.reducer'
 import CommentForm from './CommentForm'
-import withToggle from '../../components/withToggle'
+import PropTypes from 'prop-types'
+import React from 'react'
+import withToggle from '../../components/withToggle/withToggle'
+import { actions } from '../../redux/actions'
+import { connect } from 'react-redux'
+import { selectLoggedUser } from '../../redux/reducers/users.reducer'
 
 class Comments extends React.Component {
     constructor(props) {

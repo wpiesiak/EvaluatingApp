@@ -1,8 +1,8 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
-import { Provider } from 'react-redux'
-import store from '../../store'
 import User from './LoggedUser'
+import store from '../../store'
+import { Provider } from 'react-redux'
+import { fireEvent, render } from '@testing-library/react'
 
 describe('UserPage', () => {
     let userPage
@@ -38,5 +38,12 @@ describe('UserPage', () => {
         expect(userPage.getByText('First name is required')).toBeTruthy()
         expect(userPage.getByText('Last name is required')).toBeTruthy()
         expect(userPage.getByText('Invalid email address')).toBeTruthy()
+    })
+    test('user form submit properly', () => {
+        fireEvent.click(userPage.getByText('Edit'))
+        const nameInput = userPage.getByPlaceholderText('First Name')
+        fireEvent.change(nameInput, { target: { value: 'Test' } })
+        fireEvent.click(userPage.getByText('Accept'))
+        expect(userPage.getByText('Test')).toBeInTheDocument()
     })
 })
