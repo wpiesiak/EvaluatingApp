@@ -1,8 +1,8 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
-import { Provider } from 'react-redux'
-import store from '../../store'
 import User from './LoggedUser'
+import store from '../../store'
+import { Provider } from 'react-redux'
+import { fireEvent, render } from '@testing-library/react'
 
 describe('UserPage', () => {
     let userPage

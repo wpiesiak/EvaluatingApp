@@ -1,8 +1,8 @@
+import App from './App'
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
 import history from './history'
 import { Router } from 'react-router-dom'
-import App from './App'
+import { render, fireEvent } from '@testing-library/react'
 
 describe('Main app ', () => {
     test('renders Evaluation App text', () => {

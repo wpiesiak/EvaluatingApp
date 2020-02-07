@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { reduxForm } from 'redux-form'
-import GeneralSection from './General'
 import AddressSection from './Address'
+import GeneralSection from './General'
 import HobbySection from './Hobby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { reduxForm } from 'redux-form'
 import { validate } from './validate'
 
 class UserForm extends React.Component {

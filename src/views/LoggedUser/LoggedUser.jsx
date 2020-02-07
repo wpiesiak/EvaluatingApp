@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { actions } from '../../redux/actions'
-import { selectLoggedUser } from '../../redux/reducers/users.reducer'
-import withToggle from '../../components/withToggle/withToggle'
-import UserForm from './Form/Form'
-import UserData from './Data'
 import './style.scss'
+import PropTypes from 'prop-types'
+import React from 'react'
+import UserData from './Data'
+import UserForm from './Form/Form'
+import withToggle from '../../components/withToggle/withToggle'
+import { actions } from '../../redux/actions'
+import { connect } from 'react-redux'
+import { selectLoggedUser } from '../../redux/reducers/users.reducer'
 
 class LoggedUser extends React.Component {
     constructor(props) {

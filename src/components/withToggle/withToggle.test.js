@@ -1,6 +1,6 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
 import withToggle from './withToggle'
+import { fireEvent, render } from '@testing-library/react'
 
 const MockComponent = props => {
     return (

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
 import { actions } from '../../redux/actions'
+import { connect } from 'react-redux'
 import { selectDetailedUser } from '../../redux/reducers/users.reducer'
 import { useParams, withRouter } from 'react-router-dom'
 

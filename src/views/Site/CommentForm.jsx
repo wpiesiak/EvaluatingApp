@@ -1,16 +1,12 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { reduxForm, Field } from 'redux-form'
 
 class CommentForm extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            commentInfo: '',
-        }
-        this.handleChange = this.handleChange.bind(this)
+    state = {
+        commentInfo: '',
     }
-    handleChange(e) {
+    handleChange = e => {
         if (e.target.value.length < 10) {
             this.setState({
                 commentInfo: 'try to write comment longer than 10 characters!',
@@ -56,7 +52,4 @@ CommentForm.propTypes = {
 
 export default reduxForm({
     form: 'comment',
-    // fields,
-    // validate
-    // initialValues: this.props.initialValues
 })(CommentForm)

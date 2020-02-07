@@ -1,10 +1,10 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import SingleUser from './Single'
+import store from '../../store'
+import { Provider } from 'react-redux'
 import { Router, Route } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import { Provider } from 'react-redux'
-import store from '../../store'
-import SingleUser from './Single'
+import { render } from '@testing-library/react'
 
 const exampleUser = {
     id: 0,

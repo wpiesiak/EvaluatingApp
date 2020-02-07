@@ -1,8 +1,8 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import UsersList from './List'
 import configureStore from 'redux-mock-store'
 import usersList from '../../redux/actions/usersList'
-import UsersList from './List'
+import { render } from '@testing-library/react'
 
 const initialState = {
     users: {

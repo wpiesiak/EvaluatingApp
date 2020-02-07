@@ -1,7 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { actions } from '../../redux/actions'
+import { connect } from 'react-redux'
 import { selectUsersList } from '../../redux/reducers/users.reducer'
 
 class UsersList extends React.Component {
@@ -11,9 +11,8 @@ class UsersList extends React.Component {
             users: [],
             loading: true,
         }
-        this.getUsers = this.getUsers.bind(this)
     }
-    getUsers() {
+    getUsers = () => {
         this.props.getUsers()
         this.setState({
             loading: false,
