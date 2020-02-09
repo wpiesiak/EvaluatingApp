@@ -7,6 +7,20 @@
 
 # testing
 /coverage
+
+# Snapshots should not be ignored so they can be compared between developers, and CI
+# also the snapshots itself contain some RTL properties, which are not relevant for us
+#  "debug": [Function],
+#  "findAllByAltText": [Function],
+#  "findAllByDisplayValue": [Function],
+#  "findAllByLabelText": [Function],
+#  "findAllByPlaceholderText": [Function],
+#  "findAllByRole": [Function],
+#  "findAllByTestId": [Function],
+#  "findAllByText": [Function],
+#  "findAllByTitle": [Function],
+#  "findByAltText": [Function],
+#  "findByDisplayValue": [Function],
 /src/__snapshots__
 /src/views/Home/__snapshots__
 /src/views/Site/__snapshots__

@@ -28,6 +28,7 @@ describe('Users List Page', () => {
         const exampleUser = usersList.users[0]
         const userFullName = `${exampleUser.firstName} ${exampleUser.lastName}`
         expect(await findByText(userFullName)).toBeInTheDocument()
+        // this checks only if first user was rendered properly
     })
     test('Link redirect to proper url', async () => {
         const component = setup()
@@ -42,9 +43,14 @@ describe('Users List Page', () => {
         const component = setup({ store })
         expect(await component.findByText('No users found')).toBeInTheDocument()
     })
-    test('show loading when data is not loaded yet', () => {
-        const { getByText } = setup()
+    test('show loading when data is not loaded yet', async () => {
+        const { getByText, findByText } = setup()
         expect(getByText('Loading....')).toBeInTheDocument()
+        // what's interesting, you can uncomment the lines below, and the test will still pass
+        // which means we can have situations of having users rendered and still see "Loading..."
+        const exampleUser = usersList.users[0]
+        const userFullName = `${exampleUser.firstName} ${exampleUser.lastName}`
+        expect(await findByText(userFullName)).toBeInTheDocument()
     })
     test('fetch users list on #componentDidMount', async () => {
         const { findByText } = setup()

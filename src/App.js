@@ -13,6 +13,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import { Router, Switch, Route, Link } from 'react-router-dom'
 
+// AFAIK in projects we use 2space indentations
 function App() {
     return (
         <div className="App">
@@ -42,6 +43,7 @@ function App() {
                     <main>
                         <Switch>
                             <Route exact path="/" component={Home} />
+                            {/*do we need exact below?*/}
                             <Route exact path="/user" component={LoggedUser} />
                             <Route path="/site" component={Site} />
                             <Route path="/users" component={UsersList} />

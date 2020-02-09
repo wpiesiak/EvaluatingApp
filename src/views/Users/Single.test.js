@@ -34,6 +34,8 @@ const exampleUser2 = {
     },
 }
 
+// this is a lot of setup for unit testing simple component
+// what if the application setup changes, or if there would be bug in this setup?
 function renderWithRouterMatch(
     ui,
     {

@@ -8,6 +8,7 @@ import { validate } from './validate'
 
 class UserForm extends React.Component {
     render() {
+        // There is no form for nested data (eg. user.address.postalCode)
         return (
             <form onSubmit={this.props.handleSubmit} className="user-form">
                 <GeneralSection />
@@ -29,7 +30,9 @@ class UserForm extends React.Component {
 }
 
 UserForm.propTypes = {
+    // as handleSubmit is not Required, what would happen if it would not be passed to this component
     handleSubmit: PropTypes.func,
+    //  missing propTypes
 }
 
 export default reduxForm({

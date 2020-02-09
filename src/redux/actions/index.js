@@ -8,6 +8,7 @@ import {
 } from './users.actions.js'
 import { addComment, ADD_COMMENT } from './comment.actions'
 
+// combining all actions for the application can quickly get unmaintainable when the project grows
 export const actions = {
     addComment,
     getDetailedUser,

@@ -15,7 +15,7 @@ class UsersList extends React.Component {
     getUsers = () => {
         this.props.getUsers()
         this.setState({
-            loading: false,
+            loading: false, // what if getUsers request takes 5s and loading?
         })
     }
     componentDidMount() {

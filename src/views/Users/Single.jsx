@@ -8,6 +8,8 @@ import { useParams, withRouter } from 'react-router-dom'
 const SingleUser = props => {
     const { id } = useParams()
     const { user, getUser } = props
+
+    // this useEffect is triggered on every render
     useEffect(() => {
         getUser(id)
     })
@@ -47,6 +49,10 @@ const mapStateToProps = state => ({
     user: selectDetailedUser(state),
 })
 
+// there is simpler synthax for this
+// const mapDispatchToProps = {
+//   getUser: actions.getDetailedUser,
+// };
 const mapDispatchToProps = dispatch => ({
     getUser: userId => actions.getDetailedUser(userId)(dispatch),
 })
@@ -54,4 +60,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(withRouter(SingleUser))
+)(withRouter(SingleUser)) // withRouter is not needed when having useParams
