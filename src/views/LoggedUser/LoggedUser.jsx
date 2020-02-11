@@ -23,7 +23,7 @@ class LoggedUser extends React.Component {
             <div className="user-page">
                 {edit ? (
                     <UserForm
-                        initialValues={this.props.user}
+                        initialValues={{}}
                         onSubmit={this.formSubmit}
                         toggleEdit={this.props.toggle}
                     />

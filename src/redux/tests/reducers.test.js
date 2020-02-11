@@ -67,7 +67,7 @@ describe('test users reducer', () => {
 describe('test comments reducer', () => {
     it('should return initial state', () => {
         expect(comments(undefined, {})).toEqual({
-            comments: [
+            comments: [ // initial state could be exported and used here
                 {
                     id: 0,
                     timestamp: '2020-01-02',

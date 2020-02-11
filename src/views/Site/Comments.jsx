@@ -13,6 +13,7 @@ class Comments extends React.Component {
     }
 
     formSubmit(comment) {
+        // what about adding such additional data via invisible inputs?
         comment.id = this.props.comments.length
         comment.added_by =
             this.props.user.firstName + ' ' + this.props.user.lastName
@@ -21,6 +22,8 @@ class Comments extends React.Component {
     }
 
     renderComment(comment) {
+      // it's good to extract such methods to separate components
+      // especially when the markup & logic grows
         return (
             <div className="comment" key={comment.id}>
                 <div className="comment__info">
@@ -37,12 +40,14 @@ class Comments extends React.Component {
     render() {
         const limit = this.props.toggleStatus ? 100 : 1
         const comments = []
+        // why is this assignment needed?
         Object.assign(comments, this.props.comments)
         return (
             comments && (
                 <div className="comments-container">
                     <h2>Comments</h2>
                     <CommentForm onSubmit={this.formSubmit} />
+                    {/*such data transformations should be done in selectors*/}
                     {comments
                         .reverse()
                         .slice(0, limit)
