@@ -7,32 +7,34 @@ import { reduxForm } from 'redux-form'
 import { validate } from './validate'
 
 class UserForm extends React.Component {
-    render() {
-        return (
-            <form onSubmit={this.props.handleSubmit} className="user-form">
-                <GeneralSection />
-                <AddressSection />
-                <HobbySection />
-                <div className="mt-3 text-center">
-                    <button
-                        type="button"
-                        className="btn btn-danger mr-3"
-                        onClick={this.props.toggleEdit}
-                    >
+  render() {
+    return (
+      <form onSubmit={this.props.handleSubmit} className="user-form">
+        <GeneralSection />
+        <AddressSection />
+        <HobbySection />
+        <div className="mt-3 text-center">
+          <button
+            type="button"
+            className="btn btn-danger mr-3"
+            onClick={this.props.toggleEdit}
+          >
                         Cancel
-                    </button>
-                    <button className="btn btn-primary">Accept</button>
-                </div>
-            </form>
-        )
-    }
+          </button>
+          <button className="btn btn-primary">Accept</button>
+        </div>
+      </form>
+    )
+  }
 }
 
 UserForm.propTypes = {
-    handleSubmit: PropTypes.func,
+  handleSubmit: PropTypes.func.isRequired,
+  toggleEdit: PropTypes.func,
+  initialValues: PropTypes.object,
 }
 
 export default reduxForm({
-    form: 'user',
-    validate,
+  form: 'user',
+  validate,
 })(UserForm)
